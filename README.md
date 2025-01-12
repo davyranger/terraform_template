@@ -7,7 +7,7 @@ This guide provides instructions for deploying Terraform infrastructure in Azure
 ## Prerequisites
 
 ### Azure Backend
-Ensure the Azure Resource Manager (AzureRM) backend is configured in your Terraform setup. The backend must already exist and be accessible.
+Ensure the Azure Resource Manager (AzureRM) backend is configured in your Terraform setup main.tf parent_directory. The backend must already exist and be accessible.
 
 ### GitHub Secrets
 The following secrets must be defined in your GitHub repository for authentication with Azure:
@@ -43,7 +43,7 @@ ARM_TENANT_ID: "${{ secrets.AZURE_TENANT_ID }}"
 5. **Authenticating using a Service Principal with Open ID Connect**
     Setting up an Application and Service Principal in Azure
     [Configure Azure Active Directory Application to Trust a GitHub Repository](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/service_principal_oidc)
-		
+
 ---
 
 ## Instructions
