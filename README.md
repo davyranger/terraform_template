@@ -36,6 +36,14 @@ ARM_TENANT_ID: "${{ secrets.AZURE_TENANT_ID }}"
    Follow the steps to register an application in the Microsoft Entra ID (Azure Active Directory):  
    [Register an Application Guide](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal#prerequisites)
 
+4. **Configure an app to trust an external identity provider**
+    This describes how to manage a federated identity credential on an application in Microsoft Entra ID:
+    [Configure a federated identity credential on an app](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation-create-trust?/pivots=identity-wif-apps-methods-azp#configure-a-federated-identity-credential-on-an-app)
+
+5. **Authenticating using a Service Principal with Open ID Connect**
+    Setting up an Application and Service Principal in Azure
+    [Configure Azure Active Directory Application to Trust a GitHub Repository](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/service_principal_oidc)
+		
 ---
 
 ## Instructions
