@@ -12,14 +12,14 @@ terraform {
 
   required_version = ">= 1.9.0"
 
-  # Configuration for storing Terraform state remotely in an Azure storage account
+  # Configuration for storing Terraform state remotely in an Azure storage account that has to exist before the main configuration is run
 
   backend "azurerm" {
-    resource_group_name  = "template_statefiles"    # Resource group where the storage account is located
+    resource_group_name  = "template_statefiles"     # Resource group where the storage account is located
     storage_account_name = "template_storageaccount" # Azure Storage account for storing the state file
-    container_name       = "template_blob"          # Blob container where the state file will be stored
-    key                  = "terraform.tfstate"      # Name of the Terraform state file
-    use_oidc             = true                     # Enable OIDC for authentication with Azure
+    container_name       = "template_blob"           # Blob container where the state file will be stored
+    key                  = "terraform.tfstate"       # Name of the Terraform state file
+    use_oidc             = true                      # Enable OIDC for authentication with Azure
   }
 }
 
