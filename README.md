@@ -6,6 +6,7 @@ This guide provides instructions for deploying Terraform infrastructure in Azure
 
 ## Prerequisites
 
+[Terraform Azure provider configuration](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
 ### Azure Backend
 Ensure the Azure Resource Manager (AzureRM) backend is configured in your Terraform setup main.tf parent_directory. The backend must already exist and be accessible.
 
