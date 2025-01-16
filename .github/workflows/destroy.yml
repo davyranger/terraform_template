@@ -1,4 +1,4 @@
-name: Azure Destroy Slack Bot Workflow
+name: Azure Destroy Resources
 
 on:
   workflow_dispatch: # Allows the workflow to be triggered manually
