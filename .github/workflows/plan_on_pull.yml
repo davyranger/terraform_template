@@ -33,7 +33,6 @@ jobs:
     - name: Run TFSec Manually
       id: tfsec_manual  # Assign an ID for referencing outputs if needed
       run: |
-        # Execute TFSec with a severity filter and output results to a JSON file
         tfsec . --minimum-severity CRITICAL --out results.json
         echo "TFSec completed with results written to results.json."
 
