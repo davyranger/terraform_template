@@ -31,8 +31,10 @@ jobs:
     - name: Run TFLint  # Step to run TFLint
       run: tflint # Command to run TFLint
 
-    - name: Run TFSec  # Step to run TFSec
-      run: tfsec . -m, --minimum-severity CRITICAL  # Command to run TFSec focusing only on critical severity
+    - name: Run TFSec
+      uses: aquasecurity/tfsec-pr-commenter-action@v1.2.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Run Checkov  # Step to run Checkov
       run: |
