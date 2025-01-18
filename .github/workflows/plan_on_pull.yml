@@ -30,6 +30,11 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v4  # Use the latest version of the checkout action
 
+    - name: Run TFSec
+      id: tfsec
+      run: |
+        tfsec . --minimum-severity CRITICAL --out results.json --exit-code 1
+
     - name: TFSec PR Commenter
       uses: aquasecurity/tfsec-pr-commenter-action@v1.2.0
       with:
