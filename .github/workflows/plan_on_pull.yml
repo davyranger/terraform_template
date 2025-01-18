@@ -22,9 +22,24 @@ env:
   ARM_TENANT_ID: "${{ secrets.AZURE_TENANT_ID }}"
 
 jobs:
+  static-analysis:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+
+    steps:
+    - uses: actions/checkout@v2  # Step to check out the code from the repository
+
+    - name: Run TFLint  # Step to run TFLint
+      run: tflint # Command to run TFLint
+
+    - name: Run TFSec  # Step to run TFSec
+      run: tfsec . -m, --minimum-severity CRITICAL  # Command to run TFSec focusing only on critical severity
+
+    - name: Run Checkov  # Step to run Checkov
+      run: |
+        checkov -d . --check NON_EXISTENT_CHECK
+
   terraform-plan:
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
 
     steps:
     - name: Checkout code
@@ -72,5 +87,6 @@ jobs:
       run: opa eval --data .github/workflows/terraform.rego --input ./infra/parent_directory/tfplan.json "data.terraform.analysis.score"
       continue-on-error: false
 
+    needs: static-analysis
 
       
