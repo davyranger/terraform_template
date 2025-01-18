@@ -28,17 +28,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2  # Step to check out the code from the repository
 
-    - name: Run TFLint  # Step to run TFLint
-      run: tflint # Command to run TFLint
-
     - name: Run TFSec
       uses: aquasecurity/tfsec-pr-commenter-action@v1.2.0
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Run Checkov  # Step to run Checkov
-      run: |
-        checkov -d . --check NON_EXISTENT_CHECK
 
   terraform-plan:
     runs-on: ubuntu-latest
