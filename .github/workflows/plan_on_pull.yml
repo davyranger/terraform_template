@@ -27,29 +27,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Check out the repository's code
     - name: Checkout Code
       uses: actions/checkout@v4  # Use the latest version of the checkout action
 
-    # Step 2: Run TFSec manually
     - name: Run TFSec Manually
       id: tfsec_manual  # Assign an ID for referencing outputs if needed
       run: |
         # Execute TFSec with a severity filter and output results to a JSON file
         tfsec . --minimum-severity CRITICAL --out results.json
         echo "TFSec completed with results written to results.json."
-
-    # Step 3: Display the TFSec results for debugging
-    - name: Display TFSec Results
-      if: always()  # Ensure this step runs even if the previous step fails
-      run: |
-        # Check if results.json exists and display its contents
-        if [ -f results.json ]; then
-          echo "TFSec Results:"
-          cat results.json
-        else
-          echo "No results.json file found."
-        fi
 
     # Step 4: Use the TFSec PR Commenter Action
     - name: TFSec PR Commenter
