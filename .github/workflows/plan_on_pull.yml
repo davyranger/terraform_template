@@ -6,6 +6,8 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - 'infra/modules/module1/resource_group.tf'
       
 # Special permissions required for OIDC authentication
 # configure github actions - https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/about-security-hardening-with-openid-connect#adding-permissions-settings
