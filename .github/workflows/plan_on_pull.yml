@@ -15,7 +15,6 @@ on:
 permissions:
   id-token: write
   contents: read
-  administration: write
 
 env:
   ARM_CLIENT_ID: "${{ secrets.AZURE_CLIENT_ID }}"
@@ -29,7 +28,7 @@ jobs:
 
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v4  # Use the latest version of the checkout action
+      uses: actions/checkout@master  # Use the latest version of the checkout action
 
     - name: TFSec PR Commenter
       uses: aquasecurity/tfsec-pr-commenter-action@v1.2.0
