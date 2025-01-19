@@ -51,7 +51,7 @@ jobs:
       - name: Setup OPA
         uses: open-policy-agent/setup-opa@v2
         with:
-          version: latest
+          version: "1.0.0"
 
       - name: Run OPA Authz Policy Check
         id: opa-authz-check
