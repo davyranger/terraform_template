@@ -1,7 +1,7 @@
-# https://docs.github.com/en/actions
-
+# https://docs.github.com/en/actions/about-github-actions/understanding-github-actions#workflows
 name: Azure Plan Workflow
 
+# https://docs.github.com/en/actions/about-github-actions/understanding-github-actions#events
 on:
   pull_request:
     branches:
@@ -22,14 +22,15 @@ env:
   ARM_SUBSCRIPTION_ID: "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
   ARM_TENANT_ID: "${{ secrets.AZURE_TENANT_ID }}"
 
+# https://docs.github.com/en/actions/about-github-actions/understanding-github-actions#jobs
 jobs:
   static-analysis:
-    # Define the job to run on the latest Ubuntu runner
+    # Define the job to run on the latest Ubuntu runner https://docs.github.com/en/actions/about-github-actions/understanding-github-actions#runners
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v4  # Use the latest version of the checkout action
+      uses: actions/checkout@v4  # Use the latest version of the checkout action https://docs.github.com/en/actions/about-github-actions/understanding-github-actions#actions
 
     - name: TFSec PR Commenter
       uses: aquasecurity/tfsec-pr-commenter-action@v1.3.1
