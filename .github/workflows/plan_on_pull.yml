@@ -36,7 +36,7 @@ jobs:
       with:
         tfsec_args: --minimum-severity CRITICAL
         github_token: ${{ secrets.GITHUB_TOKEN }} # https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication#about-the-github_token-secret
-        working_directory: '' 
+        working_directory: '' # https://github.com/aquasecurity/tfsec-pr-commenter-action/issues/90
 
   terraform-plan:
     runs-on: ubuntu-latest
