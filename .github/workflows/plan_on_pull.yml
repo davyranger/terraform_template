@@ -40,7 +40,7 @@ jobs:
         working_directory: '' # https://github.com/aquasecurity/tfsec-pr-commenter-action/issues/90
 
   terraform-plan:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
     - name: Checkout code
