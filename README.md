@@ -14,7 +14,7 @@ This guide provides instructions for deploying Terraform infrastructure in Azure
 [Terraform Azure provider configuration](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
 
 ### Azure Backend
-Ensure the Azure Resource Manager (AzureRM) backend is configured in your Terraform setup main.tf parent_directory. The backend must already exist and be accessible.
+Ensure the Azure Resource Manager (AzureRM) backend is configured in your Terraform setup main.tf parent_directory. **The backend must already exist and be accessible prior to running workflows.**
 
 ### GitHub Secrets
 The following secrets must be defined in your GitHub repository for authentication with Azure:
