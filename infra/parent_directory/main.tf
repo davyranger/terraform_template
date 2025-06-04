@@ -16,7 +16,7 @@ terraform {
 
   backend "azurerm" {
     resource_group_name  = "terraform"     # Resource group where the storage account is located
-    storage_account_name = "workflowstatefiles" # Azure Storage account for storing the state file
+    storage_account_name = "workflowstatefiles1" # Azure Storage account for storing the state file
     container_name       = "template-blob"           # Blob container where the state file will be stored
     key                  = "terraform.tfstate"       # Name of the Terraform state file
     use_oidc             = true                      # Enable OIDC for authentication with Azure
